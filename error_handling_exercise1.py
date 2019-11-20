@@ -13,8 +13,9 @@ def ask_name_user():
     while name_user_input is None:
         try:
             name_user_input = input("Please enter your name: ")
-        except ValueError:
-            print("Please insert letters not numbers")
+        except ValueError as err:
+            #MODIFIED THE PRINT TO SHOW ORIGINAL ERROR MESSAGE
+            print("You entered invalid value: %s" % err)
         else:
             print("Thanks for your name")
     return name_user_input
@@ -31,8 +32,8 @@ def ask_age_user():
         try:
             age_user_input = int(input("Please enter your age: "))
             assert age_user_input > 0
-        except (ValueError, AssertionError):
-            print("Enter a positive number , not letters or signs")
+        except (ValueError, AssertionError) as err:
+            print("You entered invalid value: %s" % err)
         else:
             print("Thanks for your age")
     return age_user_input
