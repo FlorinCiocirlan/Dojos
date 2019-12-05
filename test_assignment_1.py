@@ -22,7 +22,7 @@ def is_anagram(a, b):
             return False
         else:
             return True
-        
+    
     for letter in b:
         if (letter not in a) or (len(b) != len(a)):
             return False
